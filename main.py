@@ -3,11 +3,16 @@ from bs4 import BeautifulSoup
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, Session
 from sqlalchemy import create_engine, Column, String
 import pymysql
-from time import sleep
+import dotenv
+import os
 
 pymysql.install_as_MySQLdb()
 
-engine = create_engine("mysql://root:120311@127.0.0.1:3305/miaou", echo=True)
+dotenv.load_dotenv()
+
+print(os.getenv('DATABASE_URL'))
+
+engine = create_engine(os.getenv('DATABASE_URL'), echo=True)
 
 
 class Base(DeclarativeBase):
