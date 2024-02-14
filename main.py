@@ -10,8 +10,6 @@ pymysql.install_as_MySQLdb()
 
 dotenv.load_dotenv()
 
-print(os.getenv('DATABASE_URL'))
-
 engine = create_engine(os.getenv('DATABASE_URL'), echo=True)
 
 
