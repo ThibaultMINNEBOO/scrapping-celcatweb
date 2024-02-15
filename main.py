@@ -35,13 +35,13 @@ class Event(Base):
 
 Base.metadata.create_all(engine)
 
-for week in range(36, 67):
+for week in range(36, 77):
     if week >= 53:
         week -= 52
 
     print(f"Semaine {week}")
 
-    for day in range(1, 7):
+    for day in range(6):
 
         print(f"Jour {day}")
 
